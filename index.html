@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+        <header class="wrapper flex">
+          <h1>SPLITER</h1>
+        </header>
+        <div class="wrapper">
+        <section class="calculator flex">
+          <div class="input-container flex col">
+            <h5>Bill</h5>
+            <input class="input-solo" id="bill" type="number">
+            <h5>Select Tip %</h5>
+            <div class="button-box">
+            <button class="active buttonGroup" id="5" value="5">5</button>
+            <button class="buttonGroup" id="10" value="10">10</button>
+            <button class="buttonGroup" id="15" value="15">15</button>
+            <button class="buttonGroup" id="20" value="20">20</button>
+            <button class="buttonGroup" id="25" value="25">25</button>
+            <input type="number" class="buttonGroup" id="30" value="0" />
+            <span class="flex"><h5>Number of People</h5><h6>Can't be zero</h6></span>
+            <input class="input-solo" id="people" type="number">
+          </div>
+          </div>
+          
+          <div class="output-container">
+            <ul class="flex col">
+              <li class="tip-amount flex">
+                
+                  <p>Tip Amount
+                  <span class="block">/ person</p></span>
+                
+                <p id="amount" class="amount">$0.00</p>
+              </li>
+              <li class="tip-total flex">
+                <p>Total
+                  <span class="block">
+                  / person</p></span>
+                <p id="total" class="total">$0.00</p>
+              </li>
+              <button class="fb" onclick="calculate()">CALCULATE</button>
+              <button class="fb" onclick="rester()">RESET</button>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- <div class="wrapper flex">
+      <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </footer>
+    </div> -->
+    <script src="./main.js"></script>
+  </body>
+</html>
