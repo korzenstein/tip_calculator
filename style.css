@@ -1,3 +1,14 @@
+/* Root Css */
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --dark-cyan: hsl(183, 100%, 15%);
+  --dark-gr-cyan-one: hsl(186, 14%, 43%);
+  --dark-gr-cyan-two: hsl(184, 14%, 56%);
+  --lt-gr-cyan-one: hsl(185, 41%, 84%);
+  --lt-gr-cyan-two: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+/* Setup css */
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -222,56 +233,82 @@ html {
   overflow: hidden;
 }
 
-/* New CSS Styling */
+/* Strip Styles */
 
-html {
-  font-family: "Space Mono", monospace;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.wrapper {
-  max-width: 1180px;
-  width: 80%;
-  margin: 0 auto;
-}
-
-header {
-  justify-content: center;
-}
-
-li {
+ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
+/* Utility Classes */
 .flex {
   display: flex;
 }
-/* 
-.block {
-  display: block;
-} */
 
 .col {
   flex-direction: column;
 }
 
+/* General styles */
+html {
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  background-color: var(--lt-gr-cyan-one);
+}
+
+.wrapper {
+  max-width: 1180px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Header styles */
+
+header {
+  justify-content: center;
+}
+
+header div {
+  margin: 40px 0px;
+}
+
+/* Calculator syles */
+
 .calculator {
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 400px;
+  gap: 40px;
+  border-radius: 15px;
+  padding: 40px;
+  background-color: var(--white);
+}
+
+.calculator * {
+  border-radius: 5px;
 }
 
 .input-container,
 .output-container {
   flex-basis: 50%;
+  height: 100%;
 }
 
-/* .input-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  gap: 10px;
-} */
+/* Input section syles */
+
+.input-container {
+  color: var(--dark-gr-cyan-one);
+  justify-content: space-between;
+}
 
 .button-box {
   display: flex;
@@ -280,14 +317,102 @@ li {
   gap: 10px;
 }
 
-/* .input-container li {
-  flex-basis: calc(100% / 3);
-} */
+/* Group of Buttons */
 
-.output-container li {
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.buttonGroup,
+input .buttonGroup {
+  flex-basis: calc((100% / 3) - 10px);
+  padding: 10px 20px;
+  max-width: 150px;
+  display: block;
+  background-color: var(--dark-cyan);
+  font-weight: 400;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+
+.buttonGroup + .number {
+  text-align: center;
+  display: inline-block;
+  min-width: 0;
+  font-family: inherit;
+  background-color: var(--lt-gr-cyan-two);
+  color: ;
+}
+
+.buttonGroup + .number:hover,
+.buttonGroup + .number:focus {
+  outline: none;
+  border: var(--lt-gr-cyan-two) solid 2px;
+  background-color: var(--lt-gr-cyan-two);
+}
+
+.active {
+  background-color: var(--strong-cyan);
+  border: var(--strong-cyan);
+  color: var(--dark-cyan);
+  font-weight: 700;
+}
+
+/* Solo Inputs */
+
+.input-solo {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  border: var(--lt-gr-cyan-two) 1px solid;
+  background-color: var(--lt-gr-cyan-two);
+  padding: 8px 0;
+}
+
+.input-solo:hover,
+.input-solo:focus {
+  outline: none;
+  border: 1px solid;
+  border-color: var(--lt-gr-cyan-one);
+}
+
+.input-container span {
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Output section styles */
+
+.output-container {
+  background-color: var(--dark-cyan);
+  color: var(--strong-cyan);
+  padding: 20px 20px;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.output-top {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.output-top ul {
+  justify-content: space-between;
+}
+.tip-amount,
+.tip-toal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+}
+
+.tip-amount span,
+.tip-total span {
+  display: block;
 }
 
 .amount,
@@ -295,47 +420,14 @@ li {
   font-size: 30px;
 }
 
-/* Input Buttons  */
-
-/* Group of Buttons */
-
-.active {
-  background-color: teal;
-}
-
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-input[type="number"] {
-  text-align: right;
-  display: inline-block;
-  min-width: 0;
-}
-
-.buttonGroup,
-input .buttonGroup {
-  flex-basis: calc((100% / 3) - 10px);
-  padding: 20px;
-  max-width: 150px;
+.calcButton {
   display: block;
-}
-
-/* Solo Inputs */
-
-.input-solo {
-  flex-basis: 100%;
-  display: block;
-}
-
-.input-solo:hover,
-.input-solo:focus {
-  border-color: teal;
-}
-
-.input-container span {
-  justify-content: space-between;
-  width: 100%;
+  background-color: var(--strong-cyan);
+  border: none;
+  font-family: inherit;
+  color: var(--dark-cyan);
+  font-weight: 700;
+  padding: 10px 30px;
 }
 
 /* Footer */
