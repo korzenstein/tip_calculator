@@ -33,8 +33,9 @@
           <div class="input-container flex col">
             <div class="bill-box">
             <h5>Bill</h5>
+            <div><img class="icons" src="./images/icon-dollar.svg" alt="dollar icon">
             <input class="input-solo" id="bill" type="number">
-            </div>
+            </div></div>
             <div class="button-box-header">
             <h5>Select Tip %</h5>
             <div class="button-box">
@@ -47,9 +48,10 @@
             </div>
             </div>
             <div>
-            <span class="flex"><h5>Number of People</h5><h6>Can't be zero</h6></span>
-            <input class="input-solo" id="people" type="number">
-            </div>
+            <span class="flex"><h5>Number of People</h5><h6 id="zero">Can't be zero</h6></span>
+            <div><img class="icons" src="./images/icon-person.svg" alt="dollar icon">
+            <input class="input-solo warning" id="people" type="number">
+            </div></div>
           
           </div>
           <!-- Output Section -->
@@ -69,9 +71,9 @@
                 <p id="total" class="total">$0.00</p>
                   </li>
                 </ul>
-                <li>
-              <button class="calcButton" onclick="calculate()">CALCULATE</button></li>
-              <li><button class="calcButton" onclick="rester()">RESET</button></li>
+                
+              <button class="calcButton" onclick="calculate()">CALCULATE</button>
+              <button class="calcButton" onclick="rester()">RESET</button>
             </ul>
           </div>
         </section>

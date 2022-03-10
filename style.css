@@ -368,6 +368,8 @@ input .buttonGroup {
   border: var(--lt-gr-cyan-two) 1px solid;
   background-color: var(--lt-gr-cyan-two);
   padding: 8px 0;
+  position: relative;
+  text-align: right;
 }
 
 .input-solo:hover,
@@ -377,9 +379,23 @@ input .buttonGroup {
   border-color: var(--lt-gr-cyan-one);
 }
 
+#zero {
+  display: inline;
+}
+.warning {
+}
+
+/* if(zero.style.display === true ) */
+
 .input-container span {
   justify-content: space-between;
   width: 100%;
+}
+
+.icons {
+  position: absolute;
+  z-index: 10;
+  padding: 10px;
 }
 
 /* Output section styles */
@@ -394,12 +410,12 @@ input .buttonGroup {
 
 .output-top {
   justify-content: space-between;
-  align-items: center;
   width: 100%;
 }
 
-.output-top ul {
+.output-top ul li {
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 .tip-amount,
 .tip-toal {
